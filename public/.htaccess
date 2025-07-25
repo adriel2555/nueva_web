@@ -1,0 +1,21 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Redirige todo el tráfico HTTP a HTTPS (estándar y seguro)
+    RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+    RewriteCond %{ENV:HTTPS} !on
+    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # Si la petición es para un archivo o directorio que existe, sírvelo directamente.
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # Si la petición no encuentra un archivo (ej. URL amigable), puedes redirigirla
+    # a un manejador central como index.php o a una página de error 404.
+    # Por ahora, vamos a redirigir a nuestra página 404 personalizada.
+    RewriteRule . /error404.html [L]
+</IfModule>
+
+# Definir la página de error 404 personalizada
+ErrorDocument 404 /error404.html
