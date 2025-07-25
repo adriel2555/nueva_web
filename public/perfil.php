@@ -4,7 +4,7 @@ require_once '../configuracion/conexion.php';
 
 // Verificar si el usuario está logueado
 if (!isset($_SESSION['email'])) {
-    header("Location: autenticacion/iniciar-sesion.html");
+    header("Location: auth/iniciar-sesion.html");
     exit();
 }
 
@@ -93,8 +93,8 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Perfil - Aranzábal</title>
-    <link rel="stylesheet" href="../archivos_estaticos/css/estilos.css">
-    <link rel="stylesheet" href="../archivos_estaticos/css/responsivo.css">
+    <link rel="stylesheet" href="../public/css/estilos.css">
+    <link rel="stylesheet" href="../public/css/responsivo.css">
     <style>
         /* Estilos específicos para la página de perfil */
         .contenedor-perfil {
@@ -521,7 +521,7 @@ footer {
 <body>
         <header>
         <div class="contenedor-logo">
-            <img src="../archivos_estaticos/img/diamanteblanco.png" alt="Joyitas Felices" class="logo">
+            <img src="../public/img/diamanteblanco.png" alt="Joyitas Felices" class="logo">
             <h1>Aranzábal</h1>
         </div>
         <button id="boton-menu" class="boton-menu" aria-label="Abrir menú">
@@ -547,10 +547,10 @@ footer {
                     </ul>
                 </li>
                 <?php else: ?>
-                <li><a href="autenticacion/iniciar-sesion.html" class="enlace-autenticacion">Iniciar Sesión</a></li>
+                <li><a href="auth/iniciar-sesion.html" class="enlace-autenticacion">Iniciar Sesión</a></li>
                 <?php endif; ?>
 
-                <li><a href="carrito/carrito.php" class="enlace-carrito">Carrito (<span id="contador-carrito">0</span>)</a>
+                <li><a href="cart/carrito.php" class="enlace-carrito">Carrito (<span id="contador-carrito">0</span>)</a>
                 </li>
             </ul>
         </nav>
@@ -711,9 +711,9 @@ footer {
             <div class="redes-sociales">
                 <h3>Síguenos</h3>
                 <div class="iconos-redes">
-                    <a href="#"><img src="../archivos_estaticos/img/iconfb.png" alt="Facebook"></a>
-                    <a href="#"><img src="../archivos_estaticos/img/iconig.webp" alt="Instagram"></a>
-                    <a href="#"><img src="../archivos_estaticos/img/iconwsp.webp" alt="WhatsApp"></a>
+                    <a href="#"><img src="../public/img/iconfb.png" alt="Facebook"></a>
+                    <a href="#"><img src="../public/img/iconig.webp" alt="Instagram"></a>
+                    <a href="#"><img src="../public/img/iconwsp.webp" alt="WhatsApp"></a>
                 </div>
             </div>
         </div>
@@ -756,7 +756,7 @@ footer {
         </div>
     </div>
 </div>
-    <script src="../archivos_estaticos/js/principal.js"></script>
+    <script src="../public/js/principal.js"></script>
     <script>
     document.addEventListener('DOMContentLoaded', function() {
         const botonMenu = document.getElementById('boton-menu');

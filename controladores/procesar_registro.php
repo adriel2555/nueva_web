@@ -83,7 +83,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Validar que las contraseñas coincidan
     if ($contrasena !== $confirmar_contrasena) {
-        header('Location: ../vista/autenticacion/registro.html?error=contrasenas_no_coinciden');
+        header('Location: ../public/auth/registro.html?error=contrasenas_no_coinciden');
         exit();
     }
 
@@ -96,13 +96,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt_check->store_result();
         
         if ($stmt_check->num_rows > 0) {
-            header('Location: ../vista/autenticacion/registro.html?error=email_existente');
+            header('Location: ../public/auth/registro.html?error=email_existente');
             exit();
         }
         $stmt_check->close();
     } catch (Exception $e) {
         error_log("Error al verificar email: " . $e->getMessage());
-        header('Location: ../vista/autenticacion/registro.html?error=error_verificacion');
+        header('Location: ../public/auth/registro.html?error=error_verificacion');
         exit();
     }
 
@@ -118,23 +118,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->bind_param("ssss", $nombre, $apellido, $email, $contrasena_hash);
         
         if ($stmt->execute()) {
-            header('Location: ../vista/autenticacion/registro-exitoso.html');
+            header('Location: ../public/auth/registro-exitoso.html');
             exit();
         } else {
             error_log("Error al registrar: " . $stmt->error);
-            header('Location: ../vista/autenticacion/registro.html?error=error_registro');
+            header('Location: ../public/auth/registro.html?error=error_registro');
             exit();
         }
     } catch (Exception $e) {
         error_log("Error en el registro: " . $e->getMessage());
-        header('Location: ../vista/autenticacion/registro.html?error=error_registro');
+        header('Location: ../public/auth/registro.html?error=error_registro');
         exit();
     }
 
     $stmt->close();
     $conn->close();
 } else {
-    header('Location: ../vista/autenticacion/registro.html');
+    header('Location: ../public/auth/registro.html');
     exit();
 }
 ?>

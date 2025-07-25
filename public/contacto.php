@@ -8,16 +8,16 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto | Aranzábal</title>
-    <link rel="stylesheet" href="../archivos_estaticos/css/estilos.css">
-    <link rel="stylesheet" href="../archivos_estaticos/css/contacto.css">
-    <link rel="stylesheet" href="../archivos_estaticos/css/responsivo.css">
+    <link rel="stylesheet" href="../public/css/estilos.css">
+    <link rel="stylesheet" href="../public/css/contacto.css">
+    <link rel="stylesheet" href="../public/css/responsivo.css">
 
 </head>
 
 <body>
     <header>
         <div class="contenedor-logo">
-            <img src="../archivos_estaticos/img/diamanteblanco.png" alt="Joyitas Felices" class="logo">
+            <img src="../public/img/diamanteblanco.png" alt="Joyitas Felices" class="logo">
             <h1>Aranzábal</h1>
         </div>
 
@@ -45,10 +45,10 @@ session_start();
                     </ul>
                 </li>
                 <?php else: ?>
-                <li><a href="autenticacion/iniciar-sesion.html" class="enlace-autenticacion">Iniciar Sesión</a></li>
+                <li><a href="auth/iniciar-sesion.html" class="enlace-autenticacion">Iniciar Sesión</a></li>
                 <?php endif; ?>
 
-                <li><a href="carrito/carrito.php" class="enlace-carrito">Carrito (<span
+                <li><a href="cart/carrito.php" class="enlace-carrito">Carrito (<span
                             id="contador-carrito">0</span>)</a></li>
             </ul>
         </nav>
@@ -57,7 +57,7 @@ session_start();
     <main class="contenedor-contacto">
         <section class="hero-contacto">
             <div class="contenido-hero">
-                <img src="../archivos_estaticos/img/cuscofondo.webp" alt="cuscofondo">
+                <img src="../public/img/cuscofondo.webp" alt="cuscofondo">
                 <h2>Contáctanos</h2>
                 <p>Estamos aquí para ayudarte con cualquier consulta</p>
             </div>
@@ -68,28 +68,28 @@ session_start();
                 <div class="info">
                     <h2>Información de Contacto</h2>
                     <div class="item-info">
-                        <img src="../archivos_estaticos/img/ubicacion.PNG" alt="Ubicación">
+                        <img src="../public/img/ubicacion.PNG" alt="Ubicación">
                         <div>
                             <h3>Dirección</h3>
                             <p>Calle Tupac Amaru 155-A, Mercado San Pedro,Cusco</p>
                         </div>
                     </div>
                     <div class="item-info">
-                        <img src="../archivos_estaticos/img/telefono.PNG" alt="Teléfono">
+                        <img src="../public/img/telefono.PNG" alt="Teléfono">
                         <div>
                             <h3>Teléfono</h3>
                             <p>987 963 921</p>
                         </div>
                     </div>
                     <div class="item-info">
-                        <img src="../archivos_estaticos/img/email.PNG" alt="Email">
+                        <img src="../public/img/email.PNG" alt="Email">
                         <div>
                             <h3>Email</h3>
                             <p>aranzabal155a@gmail.com</p>
                         </div>
                     </div>
                     <div class="item-info">
-                        <img src="../archivos_estaticos/img/horario.PNG" alt="Horario">
+                        <img src="../public/img/horario.PNG" alt="Horario">
                         <div>
                             <h3>Horario de Atención</h3>
                             <p>Lunes a Sábado: 9:00 am - 8:00 pm</p>
@@ -112,7 +112,7 @@ session_start();
             <div class="contenido-registro">
                 <h2>¿Aún no tienes una cuenta?</h2>
                 <p>Regístrate para hacer tus compras más fácilmente.</p>
-                <a href="autenticacion/registro.html" class="boton-registro">Regístrate Aquí</a>
+                <a href="auth/registro.html" class="boton-registro">Regístrate Aquí</a>
             </div>
         </section>
     </main>
@@ -136,9 +136,9 @@ session_start();
             <div class="redes-sociales">
                 <h3>Síguenos</h3>
                 <div class="iconos-redes">
-                    <a href="#"><img src="../archivos_estaticos/img/iconfb.png" alt="Facebook"></a>
-                    <a href="#"><img src="../archivos_estaticos/img/iconig.webp" alt="Instagram"></a>
-                    <a href="#"><img src="../archivos_estaticos/img/iconwsp.webp" alt="WhatsApp"></a>
+                    <a href="#"><img src="../public/img/iconfb.png" alt="Facebook"></a>
+                    <a href="#"><img src="../public/img/iconig.webp" alt="Instagram"></a>
+                    <a href="#"><img src="../public/img/iconwsp.webp" alt="WhatsApp"></a>
                 </div>
             </div>
         </div>
@@ -147,8 +147,8 @@ session_start();
         </div>
     </footer>
 
-    <script src="../archivos_estaticos/js/principal.js"></script>
-    <script src="../archivos_estaticos/js/contacto.js"></script>
+    <script src="../public/js/principal.js"></script>
+    <script src="../public/js/contacto.js"></script>
     <script>
     document.addEventListener('DOMContentLoaded', function() {
         const botonMenu = document.getElementById('boton-menu');
@@ -192,7 +192,7 @@ session_start();
             boton.addEventListener('click', function(e) {
                 e.preventDefault();
                 // Redirigir a login con parámetro para volver después
-                window.location.href = 'autenticacion/iniciar-sesion.html?redirect=' + 
+                window.location.href = 'auth/iniciar-sesion.html?redirect=' + 
                     encodeURIComponent(window.location.pathname + window.location.search);
             });
         });

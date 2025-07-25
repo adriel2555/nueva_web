@@ -29,9 +29,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Redirigir según tipo de usuario
             if ($usuario['EsAdministrador'] == 1) {
-                header("Location: ../vista/admin/admin.php");
+                header("Location: ../public/admin/admin.php");
             } else {
-                header("Location: ../vista/index.php");
+                header("Location: ../public/index.php");
             }
             exit();
         } else {
@@ -43,9 +43,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $stmt->close();
     // Guardar error en sesión para mostrar en el login
-    $_SESSION['error_login'] = $error;
-    header("Location: ../vista/autenticacion/iniciar-sesion.html");
-    exit();
+    header("Location: ../public/auth/iniciar-sesion.html?error=" . urlencode($error));
+exit();
 }
 
 $conn->close();

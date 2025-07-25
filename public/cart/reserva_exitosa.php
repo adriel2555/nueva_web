@@ -52,7 +52,7 @@ try {
     // Obtener items del pedido (para cualquier tipo de usuario)
     $stmt = $conn->prepare("
         SELECT ap.*, pr.NombreProducto, pr.Descripcion, 
-               COALESCE(pr.UrlImagen, '../../archivos_estaticos/img/producto-default.jpg') as Imagen
+               COALESCE(pr.UrlImagen, '../../public/img/producto-default.jpg') as Imagen
         FROM ArticulosPedido ap
         JOIN Productos pr ON ap.ProductoID = pr.ProductoID
         WHERE ap.PedidoID = ?
@@ -80,8 +80,8 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reserva Exitosa | Aranzábal</title>
-    <link rel="stylesheet" href="../../archivos_estaticos/css/estilos.css">
-    <link rel="stylesheet" href="../../archivos_estaticos/css/carrito.css">
+    <link rel="stylesheet" href="../../public/css/estilos.css">
+    <link rel="stylesheet" href="../../public/css/carrito.css">
     <style>
         .contenedor-reserva {
             max-width: 800px;
@@ -183,7 +183,7 @@ $conn->close();
 <body>
     <header>
         <div class="contenedor-logo">
-            <img src="../../archivos_estaticos/img/diamanteblanco.png" alt="Joyitas Felices" class="logo">
+            <img src="../../public/img/diamanteblanco.png" alt="Joyitas Felices" class="logo">
             <h1>Aranzábal</h1>
         </div>
         <nav>
@@ -204,7 +204,7 @@ $conn->close();
                     </ul>
                 </li>
                 <?php else: ?>
-                <li><a href="../autenticacion/iniciar-sesion.html" class="enlace-autenticacion">Iniciar Sesión</a></li>
+                <li><a href="../auth/iniciar-sesion.html" class="enlace-autenticacion">Iniciar Sesión</a></li>
                 <?php endif; ?>
 
                 <li><a href="carrito.php" class="enlace-carrito">Carrito (<span id="contador-carrito">0</span>)</a></li>
@@ -311,9 +311,9 @@ $conn->close();
             <div class="redes-sociales">
                 <h3>Síguenos</h3>
                 <div class="iconos-redes">
-                    <a href="#"><img src="../../archivos_estaticos/img/iconfb.png" alt="Facebook"></a>
-                    <a href="#"><img src="../../archivos_estaticos/img/iconig.webp" alt="Instagram"></a>
-                    <a href="#"><img src="../../archivos_estaticos/img/iconwsp.webp" alt="WhatsApp"></a>
+                    <a href="#"><img src="../../public/img/iconfb.png" alt="Facebook"></a>
+                    <a href="#"><img src="../../public/img/iconig.webp" alt="Instagram"></a>
+                    <a href="#"><img src="../../public/img/iconwsp.webp" alt="WhatsApp"></a>
                 </div>
             </div>
         </div>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-header('Content-Type: application/json'); // Importante: siempre devolveremos JSON
+header('Content-Type: application/json');
 
 require_once '../configuracion/conexion.php';
 

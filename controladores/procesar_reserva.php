@@ -136,7 +136,7 @@ try {
     $conn->commit();
     
     // Redirigir a página de éxito
-    header("Location: ../vista/carrito/reserva_exitosa.php?pedido_id=$pedidoId");
+    header("Location: ../public/cart/reserva_exitosa.php?pedido_id=$pedidoId");
     exit;
     
 } catch (Exception $e) {

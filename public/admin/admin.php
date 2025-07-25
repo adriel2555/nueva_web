@@ -169,9 +169,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['obtener_pedido'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="refresh" content="300">
     <title>Panel de Administración | Aranzábal</title>
-    <link rel="stylesheet" href="../../archivos_estaticos/css/administracion.css">
-    <link rel="stylesheet" href="../../archivos_estaticos/css/responsivo_admin.css">
-    <link rel="stylesheet" href="../../archivos_estaticos/css/admin.css">
+    <link rel="stylesheet" href="../../public/css/administracion.css">
+    <link rel="stylesheet" href="../../public/css/responsivo_admin.css">
+    <link rel="stylesheet" href="../../public/css/admin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         
@@ -182,7 +182,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['obtener_pedido'])) {
     <div class="contenedor-admin">
         <aside class="sidebar-admin">
             <div class="logo-admin">
-                <img src="../../archivos_estaticos/img/diamanteblanco.png" alt="ARANZABAL">
+                <img src="../../public/img/diamanteblanco.png" alt="ARANZABAL">
                 <h2>Aranzábal</h2>
                 <p>Panel de Administración</p>
             </div>
@@ -376,10 +376,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['obtener_pedido'])) {
         </button>
     </form>
 </div>
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="../../archivos_estaticos/js/admin.js"></script>
-    <script src="../../archivos_estaticos/js/admin_II.js"></script>
 
     <script>
     // Gráfico de ventas mensuales (últimos 6 meses)
@@ -678,6 +674,8 @@ window.onclick = function (event) {
     }
 };
     </script>
-
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../../public/js/admin.js"></script>
+    <script src="../../public/js/admin_II.js"></script>
 </body>
 </html>

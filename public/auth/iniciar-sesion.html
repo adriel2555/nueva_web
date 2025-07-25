@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Iniciar Sesión | Aranzábal</title>
-    <link rel="stylesheet" href="../../archivos_estaticos/css/estilos.css">
-    <link rel="stylesheet" href="../../archivos_estaticos/css/autenticacion.css">
-    <link rel="stylesheet" href="../../archivos_estaticos/css/responsivo.css">
+    <link rel="stylesheet" href="../css/estilos.css">
+    <link rel="stylesheet" href="../css/autenticacion.css">
+    <link rel="stylesheet" href="../css/responsivo.css">
 </head>
 
 <body>
     <header>
         <div class="contenedor-logo">
-            <img src="../../archivos_estaticos/img/diamanteblanco.png" alt="Joyitas Felices" class="logo">
+            <img src="../img/diamanteblanco.png" alt="Joyitas Felices" class="logo">
             <h1>Aranzábal</h1>
         </div>
 
@@ -29,8 +29,8 @@
                 <li><a href="../productos.php">Productos</a></li>
                 <li><a href="../nosotros.php">Nosotros</a></li>
                 <li><a href="../contacto.php">Contacto</a></li>
-                <li><a href="iniciar-sesion.html" class="enlace-autenticacion">Iniciar Sesión</a></li>
-                <li><a href="../carrito/carrito.php" class="enlace-carrito">Carrito (<span id="contador-carrito">0</span>)</a>
+                <li><a href="../iniciar-sesion.html" class="enlace-autenticacion">Iniciar Sesión</a></li>
+                <li><a href="../cart/carrito.php" class="enlace-carrito">Carrito (<span id="contador-carrito">0</span>)</a>
                 </li>
             </ul>
         </nav>
@@ -81,9 +81,9 @@
             <div class="redes-sociales">
                 <h3>Síguenos</h3>
                 <div class="iconos-redes">
-                    <a href="#"><img src="../../archivos_estaticos/img/iconfb.png" alt="Facebook"></a>
-                    <a href="#"><img src="../../archivos_estaticos/img/iconig.webp" alt="Instagram"></a>
-                    <a href="#"><img src="../../archivos_estaticos/img/iconwsp.webp" alt="WhatsApp"></a>
+                    <a href="#"><img src="../img/iconfb.png" alt="Facebook"></a>
+                    <a href="#"><img src="../img/iconig.webp" alt="Instagram"></a>
+                    <a href="#"><img src="../img/iconwsp.webp" alt="WhatsApp"></a>
                 </div>
             </div>
         </div>
@@ -91,8 +91,8 @@
             <p>2025 Aranzábal. Todos los derechos reservados.</p>
         </div>
     </footer>
-    <script src="../../archivos_estaticos/js/autenticacion.js"></script>
-    <script src="../archivos_estaticos/js/principal.js"></script>
+    <script src="../js/autenticacion.js"></script>
+    <script src="../js/principal.js"></script>
     <script>
     document.addEventListener('DOMContentLoaded', function() {
         const botonMenu = document.getElementById('boton-menu');
@@ -108,6 +108,16 @@
             });
         }
     });
+</script>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  if (params.has('error')) {
+    const mensaje = params.get('error');
+    const div = document.createElement('div');
+    div.textContent = decodeURIComponent(mensaje);
+    div.style.color = 'red';
+    document.body.prepend(div); // O colócalo donde prefieras
+  }
 </script>
 </body>
 

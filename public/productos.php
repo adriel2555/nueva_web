@@ -67,14 +67,14 @@ if (!$result) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo de Productos | Aranzábal</title>
-    <link rel="stylesheet" href="../archivos_estaticos/css/estilos.css">
-    <link rel="stylesheet" href="../archivos_estaticos/css/productos.css">
-    <link rel="stylesheet" href="../archivos_estaticos/css/responsivo.css">
+    <link rel="stylesheet" href="../public/css/estilos.css">
+    <link rel="stylesheet" href="../public/css/productos.css">
+    <link rel="stylesheet" href="../public/css/responsivo.css">
 </head>
 <body>
     <header>
         <div class="contenedor-logo">
-            <img src="../archivos_estaticos/img/diamanteblanco.png" alt="Joyitas Felices" class="logo">
+            <img src="../public/img/diamanteblanco.png" alt="Joyitas Felices" class="logo">
             <h1>Aranzábal</h1>
         </div>
         
@@ -102,10 +102,10 @@ if (!$result) {
                     </ul>
                 </li>
                 <?php else: ?>
-                <li><a href="autenticacion/iniciar-sesion.html" class="enlace-autenticacion">Iniciar Sesión</a></li>
+                <li><a href="auth/iniciar-sesion.html" class="enlace-autenticacion">Iniciar Sesión</a></li>
                 <?php endif; ?>
 
-                <li><a href="carrito/carrito.php" class="enlace-carrito">Carrito (<span id="contador-carrito">0</span>)</a></li>
+                <li><a href="cart/carrito.php" class="enlace-carrito">Carrito (<span id="contador-carrito">0</span>)</a></li>
             </ul>
         </nav>
     </header>
@@ -258,9 +258,9 @@ if (!$result) {
             <div class="redes-sociales">
                 <h3>Síguenos</h3>
                 <div class="iconos-redes">
-                    <a href="#"><img src="../archivos_estaticos/img/iconfb.png" alt="Facebook"></a>
-                    <a href="#"><img src="../archivos_estaticos/img/iconig.webp" alt="Instagram"></a>
-                    <a href="#"><img src="../archivos_estaticos/img/iconwsp.webp" alt="WhatsApp"></a>
+                    <a href="#"><img src="../public/img/iconfb.png" alt="Facebook"></a>
+                    <a href="#"><img src="../public/img/iconig.webp" alt="Instagram"></a>
+                    <a href="#"><img src="../public/img/iconwsp.webp" alt="WhatsApp"></a>
                 </div>
             </div>
         </div>
@@ -269,7 +269,7 @@ if (!$result) {
         </div>
     </footer>
 
-    <script src="../archivos_estaticos/js/principal.js"></script>
+    <script src="../public/js/principal.js"></script>
     <script>
     document.addEventListener('DOMContentLoaded', function() {
         const botonMenu = document.getElementById('boton-menu');
@@ -314,7 +314,7 @@ if (!$result) {
             boton.addEventListener('click', function(e) {
                 e.preventDefault();
                 // Redirigir a login con parámetro para volver después
-                window.location.href = 'autenticacion/iniciar-sesion.html?redirect=' + 
+                window.location.href = 'auth/iniciar-sesion.html?redirect=' + 
                     encodeURIComponent(window.location.pathname + window.location.search);
             });
         });

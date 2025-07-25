@@ -53,7 +53,7 @@ try {
                 c.PrecioUnitario,
                 p.NombreProducto, 
                 p.Descripcion, 
-                COALESCE(p.UrlImagen, '../../archivos_estaticos/img/producto-default.jpg') as Imagen,
+                COALESCE(p.UrlImagen, '../../public/img/producto-default.jpg') as Imagen,
                 p.CantidadStock
             FROM Carrito c
             JOIN Productos p ON c.ProductoID = p.ProductoID
@@ -83,14 +83,14 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrito de Compras | Aranzábal</title>
-    <link rel="stylesheet" href="../../archivos_estaticos/css/estilos.css">
-    <link rel="stylesheet" href="../../archivos_estaticos/css/carrito.css">
-    <link rel="stylesheet" href="../../archivos_estaticos/css/responsivo.css">
+    <link rel="stylesheet" href="../../public/css/estilos.css">
+    <link rel="stylesheet" href="../../public/css/carrito.css">
+    <link rel="stylesheet" href="../../public/css/responsivo.css">
 </head>
 <body>
     <header>
         <div class="contenedor-logo">
-            <img src="../../archivos_estaticos/img/diamanteblanco.png" alt="Joyitas Felices" class="logo">
+            <img src="../../public/img/diamanteblanco.png" alt="Joyitas Felices" class="logo">
             <h1>Aranzábal</h1>
         </div>
 
@@ -118,7 +118,7 @@ $conn->close();
                     </ul>
                 </li>
                 <?php else: ?>
-                <li><a href="../autenticacion/iniciar-sesion.html" class="enlace-autenticacion">Iniciar Sesión</a></li>
+                <li><a href="../auth/iniciar-sesion.html" class="enlace-autenticacion">Iniciar Sesión</a></li>
                 <?php endif; ?>
 
                 <li><a href="carrito.php" class="enlace-carrito activo">Carrito (<span id="contador-carrito">0</span>)</a>
@@ -136,7 +136,7 @@ $conn->close();
                     <div class="error-carrito"><?php echo $error; ?></div>
                 <?php elseif (empty($carrito_items)): ?>
                     <div class="carrito-vacio">
-                        <img src="../../archivos_estaticos/img/carrito.png" alt="Carrito vacío">
+                        <img src="../../public/img/carrito.png" alt="Carrito vacío">
                         <h3>Tu carrito está vacío</h3>
                         <p>Agrega algunos productos para comenzar</p>
                         <a href="../productos.php" class="boton-ver-productos">Ver productos</a>
@@ -233,9 +233,9 @@ $conn->close();
             <div class="redes-sociales">
                 <h3>Síguenos</h3>
                 <div class="iconos-redes">
-                    <a href="#"><img src="../../archivos_estaticos/img/iconfb.png" alt="Facebook"></a>
-                    <a href="#"><img src="../../archivos_estaticos/img/iconig.webp" alt="Instagram"></a>
-                    <a href="#"><img src="../../archivos_estaticos/img/iconwsp.webp" alt="WhatsApp"></a>
+                    <a href="#"><img src="../../public/img/iconfb.png" alt="Facebook"></a>
+                    <a href="#"><img src="../../public/img/iconig.webp" alt="Instagram"></a>
+                    <a href="#"><img src="../../public/img/iconwsp.webp" alt="WhatsApp"></a>
                 </div>
             </div>
         </div>

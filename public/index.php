@@ -3,18 +3,19 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre Nosotros | Aranzábal</title>
-    <link rel="stylesheet" href="../archivos_estaticos/css/estilos.css">
-    <link rel="stylesheet" href="../archivos_estaticos/css/nosotros.css">
-    <link rel="stylesheet" href="../archivos_estaticos/css/responsivo.css">
+    <title>Aranzábal - Insumos de Bisutería</title>
+    <link rel="stylesheet" href="../public/css/estilos.css">
+    <link rel="stylesheet" href="../public/css/responsivo.css">
 </head>
+
 <body>
     <header>
         <div class="contenedor-logo">
-            <img src="../archivos_estaticos/img/diamanteblanco.png" alt="Joyitas Felices" class="logo">
+            <img src="../public/img/diamanteblanco.png" alt="Joyitas Felices" class="logo">
             <h1>Aranzábal</h1>
         </div>
 
@@ -23,12 +24,12 @@ session_start();
             <span></span>
             <span></span>
         </button>
-
+        
         <nav id="nav-principal">
             <ul id="nav-menu">
                 <li><a href="index.php">Inicio</a></li>
                 <li><a href="productos.php">Productos</a></li>
-                <li><a href="nosotros.php" class="activo">Nosotros</a></li>
+                <li><a href="nosotros.php">Nosotros</a></li>
                 <li><a href="contacto.php">Contacto</a></li>
 
                 <?php if(isset($_SESSION['email'])): ?>
@@ -42,80 +43,52 @@ session_start();
                     </ul>
                 </li>
                 <?php else: ?>
-                <li><a href="autenticacion/iniciar-sesion.html" class="enlace-autenticacion">Iniciar Sesión</a></li>
+                <li><a href="../public/auth/iniciar-sesion.html" class="enlace-autenticacion">Iniciar Sesión</a></li>
                 <?php endif; ?>
 
-                <li><a href="carrito/carrito.php" class="enlace-carrito">Carrito (<span id="contador-carrito">0</span>)</a></li>
+                <li><a href="cart/carrito.php" class="enlace-carrito">Carrito (<span id="contador-carrito">0</span>)</a>
+                </li>
             </ul>
         </nav>
     </header>
 
-    <main class="contenedor-nosotros">
-        <section class="hero-nosotros">
+    <main>
+        <section class="hero">
             <div class="contenido-hero">
-                <img src="../archivos_estaticos/img/cuscofondo.webp" alt="cuscofondo">
-                <h2>Nuestra Historia</h2>
-                <p>Conoce más sobre Aranzábal y nuestra pasión por la bisutería</p>
-            </div>
-        </section>
-        <section class="historia">
-            <div class="contenido-historia">
-                <h2>Desde 2015 en Calle Tupac Amaru, Cusco</h2>
-                <p>Aranzábal nació como un pequeño emprendimiento familiar con el objetivo de brindar materiales de calidad para la creación de joyas artesanales. Lo que comenzó como un pasatiempo, pronto se convirtió en nuestro negocio principal gracias al apoyo de nuestra comunidad.</p>
-                <p>Hoy, con más de 8 años de experiencia, continuamos comprometidos con ofrecer los mejores insumos para bisutería, combinando tradición e innovación en cada uno de nuestros productos.</p>
-            </div>
-            <div class="imagen-historia">
-                <img src="../archivos_estaticos/img/Bisuteria.jpeg" alt="Nuestro local en Wanchaq">
+                <img src="../public/img/cuscofondo.webp" alt="cuscofondo">
+                <h2>Insumos de bisutería de calidad en Cusco</h2>
+                <p>Descubre nuestra amplia variedad de materiales para crear joyas únicas</p>
+                <a href="productos.php" class="boton-principal">Ver Catálogo</a>
             </div>
         </section>
 
-        <section class="valores">
-            <h2>Nuestros Valores</h2>
-            <div class="tarjetas-valores">
-                <div class="tarjeta-valor">
-                    <img src="../archivos_estaticos/img/calidad.png" alt="Calidad">
-                    <h3>Calidad</h3>
-                    <p>Seleccionamos cuidadosamente cada material para garantizar productos duraderos y hermosos.</p>
+        <section class="categorias-destacadas">
+            <h2>Categorías Destacadas</h2>
+            <div class="rejilla-categorias">
+                <div class="tarjeta-categoria">
+                    <img src="../public/img/piedras.jpg" alt="Piedras semipreciosas">
+                    <h3>Piedras</h3>
+                    <a href="productos.php?categoria=piedras">Ver productos</a>
                 </div>
-                <div class="tarjeta-valor">
-                    <img src="../archivos_estaticos/img/pasion.png" alt="Pasión">
-                    <h3>Pasión</h3>
-                    <p>Amamos lo que hacemos y eso se refleja en cada detalle de nuestro trabajo.</p>
+                <div class="tarjeta-categoria">
+                    <img src="../public/img/herramientas.webp" alt="Herramientas">
+                    <h3>Herramientas</h3>
+                    <a href="productos.php?categoria=herramientas">Ver productos</a>
                 </div>
-                <div class="tarjeta-valor">
-                    <img src="../archivos_estaticos/img/comunidad.png" alt="Comunidad">
-                    <h3>Comunidad</h3>
-                    <p>Creemos en apoyar a los artesanos locales y en crecer junto a nuestros clientes.</p>
+                <div class="tarjeta-categoria">
+                    <img src="../public/img/accesorios.jpg" alt="Accesorios">
+                    <h3>Accesorios</h3>
+                    <a href="productos.php?categoria=accesorios">Ver productos</a>
                 </div>
             </div>
         </section>
 
-        <section class="equipo">
-            <h2>Conoce a Nuestro Equipo</h2>
-            <div class="miembros-equipo">
-                <div class="miembro">
-                    <img src="../archivos_estaticos/img/iconmujer.png" alt="María López">
-                    <h3>María López</h3>
-                    <p>Fundadora y Gerente General</p>
-                </div>
-                <div class="miembro">
-                    <img src="../archivos_estaticos/img/iconvaron.png" alt="Carlos Rodríguez">
-                    <h3>Carlos Rodríguez</h3>
-                    <p>Especialista en Productos</p>
-                </div>
-                <div class="miembro">
-                    <img src="../archivos_estaticos/img/iconmujer.png" alt="Lucía Fernández">
-                    <h3>Lucía Fernández</h3>
-                    <p>Atención al Cliente</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="invitacion">
-            <div class="contenido-invitacion">
-                <h2>¿Quieres unirte a nuestra comunidad?</h2>
-                <p>Regístrate para recibir noticias, promociones exclusivas y consejos para tus creaciones.</p>
-                <a href="autenticacion/registro.html" class="boton-principal">Regístrate Ahora</a>
+        <section class="sobre-nosotros">
+            <div class="contenido-sobre-nosotros">
+                <h2>Sobre Aranzábal</h2>
+                <p>Desde 2015 en Wanchaq, Cusco, ofrecemos los mejores insumos para bisutería artesanal. Ahora también
+                    disponibles en nuestra tienda online.</p>
+                <a href="nosotros.php" class="boton-secundario">Conoce más</a>
             </div>
         </section>
     </main>
@@ -139,9 +112,9 @@ session_start();
             <div class="redes-sociales">
                 <h3>Síguenos</h3>
                 <div class="iconos-redes">
-                    <a href="#"><img src="../archivos_estaticos/img/iconfb.png" alt="Facebook"></a>
-                    <a href="#"><img src="../archivos_estaticos/img/iconig.webp" alt="Instagram"></a>
-                    <a href="#"><img src="../archivos_estaticos/img/iconwsp.webp" alt="WhatsApp"></a>
+                    <a href="#"><img src="../public/img/iconfb.png" alt="Facebook"></a>
+                    <a href="#"><img src="../public/img/iconig.webp" alt="Instagram"></a>
+                    <a href="#"><img src="../public/img/iconwsp.webp" alt="WhatsApp"></a>
                 </div>
             </div>
         </div>
@@ -150,7 +123,7 @@ session_start();
         </div>
     </footer>
 
-    <script src="../archivos_estaticos/js/principal.js"></script>
+    <script src="../public/js/principal.js"></script>
     <script>
     document.addEventListener('DOMContentLoaded', function() {
         const botonMenu = document.getElementById('boton-menu');
@@ -194,7 +167,7 @@ session_start();
             boton.addEventListener('click', function(e) {
                 e.preventDefault();
                 // Redirigir a login con parámetro para volver después
-                window.location.href = 'autenticacion/iniciar-sesion.html?redirect=' + 
+                window.location.href = 'auth/iniciar-sesion.html?redirect=' + 
                     encodeURIComponent(window.location.pathname + window.location.search);
             });
         });
@@ -320,6 +293,6 @@ session_start();
         }, 3000);
     }
     </script>
-    </script>
 </body>
+
 </html>

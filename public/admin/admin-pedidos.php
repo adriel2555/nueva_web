@@ -285,8 +285,8 @@ if (isset($_GET['success']) && $_GET['success'] === 'venta_directa') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administración de Pedidos | Aranzábal</title>
-    <link rel="stylesheet" href="../../archivos_estaticos/css/admin.css">
-    <link rel="stylesheet" href="../../archivos_estaticos/css/admin:p.css">
+    <link rel="stylesheet" href="../../public/css/admin.css">
+    <link rel="stylesheet" href="../../public/css/admin_pedidos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         
@@ -297,7 +297,7 @@ if (isset($_GET['success']) && $_GET['success'] === 'venta_directa') {
     <div class="contenedor-admin">
         <aside class="sidebar-admin">
             <div class="logo-admin">
-                <img src="../../archivos_estaticos/img/diamanteblanco.png" alt="Aranzábal">
+                <img src="../../public/img/diamanteblanco.png" alt="Aranzábal">
                 <h2>Aranzábal</h2>
                 <p>Panel de Administración</p>
             </div>

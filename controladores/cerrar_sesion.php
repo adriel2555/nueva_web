@@ -5,6 +5,6 @@ session_unset();
 session_destroy();
 
 // Redirigir a la página de inicio
-header("Location: ../vista/index.php");
+header("Location: ../public/index.php");
 exit();
 ?>

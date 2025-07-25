@@ -6,7 +6,7 @@
 // Configuración de la conexión
 $host = "localhost";
 $user = "root";
-$password = ""; 
+$password = "123456"; 
 $dbname = "bisuteria";
 
 // Crear conexión

@@ -30,7 +30,7 @@ $stmt->bind_param("ii", $producto_id, $usuario_id);
 if ($stmt->execute()) {
     // Verificar que realmente se eliminó
     if ($stmt->affected_rows > 0) {
-        echo "1"; // Éxito
+        echo "1";
     } else {
         // Verificar si el producto existe en el carrito
         $check_sql = "SELECT * FROM Carrito WHERE ProductoID = ? AND UsuarioID = ?";

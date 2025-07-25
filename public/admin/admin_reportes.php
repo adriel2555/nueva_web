@@ -124,7 +124,7 @@ $conn->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reportes | Aranzábal</title>
-    <link rel="stylesheet" href="../../archivos_estaticos/css/admin_reportes.css">
+    <link rel="stylesheet" href="../css/admin_reportes.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         
@@ -134,7 +134,7 @@ $conn->close();
     <div class="contenedor-admin">
         <aside class="sidebar-admin">
             <div class="logo-admin">
-                <img src="../../archivos_estaticos/img/diamanteblanco.png" alt="Aranzábal">
+                <img src="../../public/img/diamanteblanco.png" alt="Aranzábal">
                 <h2>Aranzábal</h2>
                 <p>Panel de Administración</p>
             </div>
